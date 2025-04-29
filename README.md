@@ -1,4 +1,4 @@
-Open PuTTY
+Open PuTTY (if not download it: https://www.putty.org/)
 
 Enter your EC2 Public IP in "Host Name"
 
@@ -74,7 +74,7 @@ services:
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
       - N8N_BASIC_AUTH_PASSWORD=yourStrongPasswordHere
-      - WEBHOOK_URL=https://yourwebsiteurl/
+      - WEBHOOK_URL=https://yourwebsitedomain/
     volumes:
       - n8n_data:/home/node/.n8n
 volumes:
@@ -109,6 +109,35 @@ server {
 ```
 Save and exit (Ctrl + O, Enter, Ctrl + X)
 
+Test NGINX config:
+```
+sudo nginx -t
+```
+Reload NGINX:
+```
+sudo systemctl restart nginx
+```
+Issue SSL Certificate with Certbot
+```
+sudo certbot --nginx -d yourwebsitedomain
+```
+Final Restart to apply everything
+```
+cd ~/n8n
+```
+```
+docker-compose down
+```
+```
+docker-compose up -d
+```
+```
+sudo systemctl restart nginx
+```
+Open in browser:
 
+https://yourwebsitedomain
 
+Congratulations!
 
+You have now fully installed and secured n8n on AWS EC2, accessed by domain with SSL, fully production ready!
