@@ -37,7 +37,7 @@ The .ppk key downloaded for EC2 access
 
     Allow Custom TCP (5678) from 0.0.0.0/0 if you want direct n8n test access (optional)
 
-14. Launch the instance.
+14. Go back to instance and check the Instance state on Running.
 
 ## 3. Point Your Domain to EC2
 
