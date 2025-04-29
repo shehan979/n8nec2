@@ -1,3 +1,55 @@
+## 1. Requirements Checklist
+
+AWS Account ready
+
+Domain name purchased (Namecheap, GoDaddy, etc.)
+
+PuTTY installed on your computer
+
+.ppk key downloaded for EC2 access
+
+## 2. Setup EC2 Server
+1. Go to AWS Console > EC2 > Launch Instance.
+
+2. Choose Amazon Linux 2023 (or Ubuntu 22.04 LTS).
+
+3. Choose Instance Type: t2.micro (free tier) or t2.small (better) or upper version.
+
+4. Create a new Key Pair (or use existing) and download .pem file.
+
+5. Configure Security Group (Firewall):
+
+    Allow SSH (22) from your IP or 0.0.0.0/0
+
+    Allow HTTP (80) from 0.0.0.0/0
+
+    Allow HTTPS (443) from 0.0.0.0/0
+
+    Allow Custom TCP (5678) if you want direct n8n test access (optional)
+
+6. Launch the instance.
+
+## 3. Point Your Domain to EC2
+
+1. Go to your domain registrar (Namecheap, GoDaddy, etc.).
+
+2. Find DNS settings for your domain.
+
+3. Create an A Record:
+
+    Type: A
+
+    Host: n8n (or @ if root)
+
+    Value: EC2 Public IP (e.g., 12.61.155.33)
+
+    TTL: Auto or 5 minutes
+
+✅ This connects your domain yourdomain.com to your EC2 server.
+
+(Propagation may take 5 minutes to 1 hour.)
+
+## 4. Connect n8n on EC2 using PUTTY
 Open PuTTY (if not download it: https://www.putty.org/)
 
 Enter your EC2 Public IP in "Host Name"
