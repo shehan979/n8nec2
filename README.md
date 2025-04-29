@@ -68,6 +68,8 @@ Under "SSH" -> "Auth" -> "Credentials (Private key file for authentication)", lo
 
 Click "Open" to connect.
 
+Accept the PuTTY Security Alert
+
 Open and login as:
 ```
 ec2-user
@@ -102,7 +104,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 Confirm docker-compose
 ```
-docker-compose version</code>
+docker-compose version
 ```
 Install NGINX and Certbot (SSL)
 ```
