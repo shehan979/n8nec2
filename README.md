@@ -7,55 +7,63 @@ Under "SSH" -> "Auth", load your .ppk private key file
 Click "Open" to connect.
 
 Update and install Docker
-
-##
-<tab><tab>code/sudo yum update -y</tab></tab>
-
-<code>sudo yum install -y docker</code>
-
+```
+sudo yum update -y
+```
+```
+sudo yum install -y docker
+```
 Start Docker
-
-<code>sudo systemctl start docker</code>
-
-<code>sudo systemctl enable docker</code>
-
+```
+sudo systemctl start docker
+```
+```
+sudo systemctl enable docker
+```
 Add user to docker group
-
-<code>sudo usermod -aG docker ec2-user</code>
-
-<code>newgrp docker</code>
-
+```
+sudo usermod -aG docker ec2-user
+```
+```
+newgrp docker
+```
 Install Docker Compose
-
-<code>sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code>
-
-<code>sudo chmod +x /usr/local/bin/docker-compose</code>
-
+```
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
 Confirm docker-compose
-
-<code>docker-compose version</code>
-
+```
+docker-compose version</code>
+```
 Install NGINX and Certbot (SSL)
-
-<code>sudo dnf install -y nginx</code>
-
-<code>sudo systemctl start nginx</code>
-
-<code>sudo systemctl enable nginx</code>
-
-<code>sudo dnf install -y certbot python3-certbot-nginx</code>
-
+```
+sudo dnf install -y nginx
+```
+```
+sudo systemctl start nginx
+```
+```
+sudo systemctl enable nginx
+```
+```
+sudo dnf install -y certbot python3-certbot-nginx
+```
 Set up n8n with Docker Compose
-
-<code>mkdir ~/n8n</code>
-
-<code>cd ~/n8n</code>
-
-<code>nano docker-compose.yml</code>
-
+```
+mkdir ~/n8n
+```
+```
+cd ~/n8n
+```
+```
+nano docker-compose.yml
+```
 Set up this inside docker-compose.yml
-
-<code>version: '3'
+```
+version: '3'
 services:
   n8n:
     image: n8nio/n8n
@@ -70,21 +78,21 @@ services:
     volumes:
       - n8n_data:/home/node/.n8n
 volumes:
-  n8n_data:</code>
-
+  n8n_data:
+```
 Save and exit (Ctrl + O, Enter, Ctrl + X)
 
 Start n8n
-
-<code>docker-compose up -d</code>
-
+```
+docker-compose up -d
+```
 Setup NGINX Reverse Proxy
-
-<code>sudo nano /etc/nginx/conf.d/n8n.conf</code>
-
+```
+sudo nano /etc/nginx/conf.d/n8n.conf
+```
 Paste the following
-
-<code>server {
+```
+server {
     listen 80;
     server_name yourdomainaddress;
     location / {
@@ -97,8 +105,8 @@ Paste the following
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
-}</code>
-
+}
+```
 Save and exit (Ctrl + O, Enter, Ctrl + X)
 
 
