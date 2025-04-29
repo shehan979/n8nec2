@@ -107,6 +107,18 @@ sudo systemctl enable nginx
 ```
 sudo dnf install -y certbot python3-certbot-nginx
 ```
+At that time, it will ask:
+
+Your email address (for urgent expiry notices)
+
+Agree to Let's Encrypt Terms of Service (Yes/No)
+
+Optionally ask if you want to share your email with EFF (Electronic Frontier Foundation)
+
+✅ You must enter an email and agree to continue issuing the free SSL certificate.
+
+✅ This is normal and only happens once when you first request SSL.
+
 Set up n8n with Docker Compose
 ```
 mkdir ~/n8n
