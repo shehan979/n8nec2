@@ -64,7 +64,7 @@ Open PuTTY (if not download it: https://www.putty.org/)
 
 Enter your EC2 Public IP in "Host Name"
 
-Under "SSH" -> "Auth", load your .ppk private key file
+Under "SSH" -> "Auth" -> "Credentials (Private key file for authentication)", load your .ppk private key file
 
 Click "Open" to connect.
 
