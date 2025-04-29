@@ -15,7 +15,7 @@ PuTTY installed on your computer
 
 3. Choose Instance Type: t2.micro (free tier) or t2.small (better) or upper version.
 
-4. Create a new Key Pair (or use existing) and download .pem file.
+4. Create a new Key Pair (or use existing) and download .ppk file.
 
 5. Configure Security Group (Firewall):
 
