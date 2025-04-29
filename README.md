@@ -58,6 +58,10 @@ Under "SSH" -> "Auth", load your .ppk private key file
 
 Click "Open" to connect.
 
+Open and login as:
+```
+ec2-user
+```
 Update and install Docker
 ```
 sudo yum update -y
