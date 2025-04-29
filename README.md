@@ -11,7 +11,7 @@ PuTTY installed on your computer
 ## 2. Setup EC2 Server
 1. Go to AWS Console > EC2 > Launch Instance.
 
-2. Choose Amazon Linux 2023 (or Ubuntu 22.04 LTS).
+2. Given name for Server and Choose Amazon Linux 2023 (or Ubuntu 22.04 LTS).
 
 3. Choose Instance Type: t2.micro (free tier) or t2.small (better) or upper version.
 
