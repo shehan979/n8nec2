@@ -2,32 +2,42 @@
 
 AWS Account ready
 
-Domain name purchased (Namecheap, GoDaddy, etc.)
+The domain name was purchased (Namecheap, GoDaddy, etc.).
 
-PuTTY installed on your computer
+PuTTY is installed on your computer.
 
-.ppk key downloaded for EC2 access
+The .ppk key downloaded for EC2 access
 
 ## 2. Setup EC2 Server
 1. Go to AWS Console > EC2 > Launch Instance.
 
-2. Given name for Server and Choose Amazon Linux 2023 (or Ubuntu 22.04 LTS).
+2. Give a name for the Server and choose Amazon Linux 2023 (or Ubuntu 22.04 LTS).
 
-3. Choose Instance Type: t2.micro (free tier) or t2.small (better) or upper version.
+3. Choose Instance Type: t2.micro (free tier), t2.small (better), or a higher version.
 
-4. Create a new Key Pair (or use existing) and download .ppk file.
+4. Create a new Key Pair (or use an existing one) and download the .ppk file.
 
-5. Configure Security Group (Firewall):
+5. Launch the instance.
 
-    Allow SSH (22) from your IP or 0.0.0.0/0
+7. Go to AWS Console > EC2 > Instances
+
+8. Select your instance and click on the "Security" tab.
+
+9. Click on the security group linked to your instance.
+
+10. Click "Inbound Rules" and "Edit Inbound Rules".
+
+11. Configure Security Group (Firewall):
+
+12. Click "Add Rule" and add below additional ports:
 
     Allow HTTP (80) from 0.0.0.0/0
 
     Allow HTTPS (443) from 0.0.0.0/0
 
-    Allow Custom TCP (5678) if you want direct n8n test access (optional)
+    Allow Custom TCP (5678) from 0.0.0.0/0 if you want direct n8n test access (optional)
 
-6. Launch the instance.
+14. Launch the instance.
 
 ## 3. Point Your Domain to EC2
 
