@@ -225,3 +225,18 @@ https://yourwebsitedomain
 Congratulations!
 
 You have now fully installed and secured n8n on AWS EC2, accessed by domain with SSL, fully production ready!
+
+## Step-by-Step Guide to Update n8n
+
+This will pull the latest image to your server.
+```
+docker pull n8nio/n8n
+```
+Update the Docker Compose File (optional), & You can also pin a specific version like n8nio/n8n:1.38.1 if needed.
+```
+image: n8nio/n8n:latest
+```
+Start n8n with the New Image
+```
+docker-compose up -d
+```
